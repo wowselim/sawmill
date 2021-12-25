@@ -1,0 +1,40 @@
+= Sawmill API
+
+== Building
+
+[source,shell]
+----
+./gradlew bootJar
+----
+
+== Running
+
+[source,shell]
+----
+./gradlew bootRun
+----
+
+== Running Integration Tests
+
+[source,shell]
+----
+./gradlew test
+----
+
+== Endpoints
+
+The Base URL is `/api/v1/sawmills`. A sawmill object consists of following properties:
+
+[source]
+----
+Sawmill(id, name, city, country, created_at, updated_at)
+----
+
+|===
+|Method |Path |Request |Response| Query Parameters
+
+|`GET` |`/` |― |`List<Sawmill>` |`name (string that should be contained in the sawmill name)`
+|`POST` |`/` |`{name, city, country}` |`Sawmill` |―
+|`GET` |`/{id}` |― |`Sawmill` |―
+|`PUT` |`/{id}` |`{name, city, country}` |`Sawmill` |―
+|===
